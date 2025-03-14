@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  bot:
+    build: .
+    container_name: poopineh_bot
+    restart: always
+    env_file:
+      - .env
+#    depends_on:
+#      - db
+    networks:
+      - bot_network
+
+#  db:
+#    image: postgres:latest
+#    container_name: postgres
+#    restart: always
+#    environment:
+#      POSTGRES_DB: poopineh
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: ssn19960602
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/docker/volumes/postgres_data/_data
+#    networks:
+#      - bot_network
+
+networks:
+  bot_network:
+
+#volumes:
+#  postgres_data:
